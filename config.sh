@@ -138,7 +138,7 @@ PY="$ROOT/.venv/bin/python"
 require_python() {
   [[ -x "$PY" ]] && return 0
   echo "project Python is missing or broken at $PY" >&2
-  echo "recreate it with the two uv commands under Setup in README.md" >&2
+  echo "recreate it with 'uv sync --locked' (see Setup in README.md)" >&2
   return 1
 }
 

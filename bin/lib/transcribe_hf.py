@@ -90,7 +90,7 @@ def main():
         import torch
         from transformers import pipeline
     except ImportError as error:
-        sys.exit(f"Hugging Face ASR dependencies are missing: {error}\nRun: uv pip install --python .venv/bin/python -r requirements.txt")
+        sys.exit(f"Hugging Face ASR dependencies are missing: {error}\nRun: uv sync --locked")
 
     audio, sample_rate = sf.read(args.audio, dtype="float32", always_2d=False)
     if getattr(audio, "ndim", 1) != 1:

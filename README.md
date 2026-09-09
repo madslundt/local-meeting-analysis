@@ -30,11 +30,14 @@ new file.
 ### 1. Install dependencies and models
 
 ```bash
-brew install ffmpeg whisper-cpp llama.cpp
-uv venv --clear --python 3.13 .venv
-uv pip install --python .venv/bin/python -r requirements.txt
+brew install uv ffmpeg whisper-cpp llama.cpp
+uv sync --locked
 bin/fetch-models.sh
 ```
+
+`uv sync --locked` creates `.venv` and installs the exact dependency versions
+recorded in `uv.lock`. Run `uv lock --upgrade` when you intentionally want to
+update them.
 
 Model downloads are resumable and existing models are skipped. To check what is
 missing without downloading anything:
