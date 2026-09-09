@@ -7,9 +7,8 @@ A fully local pipeline that turns any recorded meeting into:
 - optional evaluations against your own criteria; and
 - an optional comparison across multiple meetings.
 
-Audio, transcripts, and generated reports stay on this Mac. The core pipeline
-only needs network access during setup to download its models. An optional n8n
-workflow can check for newer models online.
+Audio, transcripts, and generated reports stay on this Mac. The pipeline only
+needs network access during setup to download its models.
 
 ## At a glance
 
@@ -339,10 +338,6 @@ Direct binary downloads are checked for expected headers. They use a `.part`
 file and are renamed only after completion. Hugging Face snapshots use the hub
 client's own cache and integrity handling.
 
-The optional weekly model monitor is in
-`automation/n8n-weekly-model-monitor.json`; see `automation/README.md`. It finds
-possible local-model upgrades but never downloads a model or edits `config.sh`.
-
 ## Privacy and cleanup
 
 Recordings, transcripts, contexts, speaker maps, reports, models, and working
@@ -375,7 +370,6 @@ bin/lib/                  Python helpers and LLM server lifecycle
 prompts/                  editable prompts for LLM stages
 contexts/example.md       evaluation-context template
 speakers/example.json     speaker-map example
-automation/               optional weekly model monitor
 ```
 
 To change report structure or emphasis, edit the corresponding files in
