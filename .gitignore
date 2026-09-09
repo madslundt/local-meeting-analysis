@@ -1,0 +1,22 @@
+# Only source code is tracked. Everything that holds real content -- audio,
+# transcripts, notes, summaries, evaluations, comparisons, your criteria, the
+# speaker maps, the models -- stays out of git.
+.DS_Store
+__pycache__/
+*.py[cod]
+recordings/
+transcripts/
+summaries/
+evaluations/
+comparisons/
+chats/
+work/
+models/
+.venv/
+notes/
+
+# Your filled-in criteria and speaker maps are personal; the templates are not.
+contexts/*
+!contexts/example.md
+speakers/*
+!speakers/example.json
